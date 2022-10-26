@@ -11,11 +11,11 @@ public class Main {
 
     public static void verifyVersion(byte clientOS, int clientDeviceYear) {
 
-        if (clientOS == 0 && clientDeviceYear >= 2015) {
+        if (clientOS == 0 && clientDeviceYear == java.time.LocalDate.now().getYear()) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == 0 && clientDeviceYear < 2015) {
+        } else if (clientOS == 0 && clientDeviceYear < java.time.LocalDate.now().getYear()) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOS != 0 && clientDeviceYear >= 2015) {
+        } else if (clientOS != 0 && clientDeviceYear == java.time.LocalDate.now().getYear()) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
@@ -35,8 +35,8 @@ public class Main {
         verifyHighYear(year1);
 
         //Задача 2
-        byte OS = 1;
-        int currentYear = java.time.LocalDate.now().getYear();
+        byte OS = 0;
+        int currentYear = 2021;
         verifyVersion(OS, currentYear);
 
         //Задача 3
